@@ -15,7 +15,7 @@ class CustomBtn extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               shape: const StadiumBorder(),
               elevation: 0,
-              backgroundColor: Colors.blue,
+              backgroundColor:  const Color.fromARGB(255, 37, 97, 127),
               textStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,

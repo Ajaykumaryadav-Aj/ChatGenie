@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     var mq = MediaQuery.sizeOf(context);
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(117, 68, 68, 68),
       //body
       body: SizedBox(
         width: double.maxFinite,
@@ -56,7 +56,11 @@ class _SplashScreenState extends State<SplashScreen> {
               isRepeatingAnimation: true,
               animatedTexts: [
                 ColorizeAnimatedText('Welcome to ',
-                    colors: [Colors.black, Colors.transparent],
+                    colors: [
+                      Colors.white,
+                      Colors.transparent,
+                      Colors.greenAccent
+                    ],
                     textStyle: const TextStyle(
                       fontSize: 20,
                     )),

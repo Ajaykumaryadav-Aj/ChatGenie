@@ -22,6 +22,7 @@ class ChatPage extends StatelessWidget {
             },
             icon: const Icon(
               CupertinoIcons.back,
+              color: Colors.white,
               size: 25,
             ),
           ),
@@ -34,11 +35,11 @@ class ChatPage extends StatelessWidget {
             APPNAME,
             style: GoogleFonts.poppins(
               fontSize: 21,
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: const Color.fromARGB(255, 19, 143, 110),
           actions: [
             IconButton(
                 onPressed: () {
@@ -46,7 +47,10 @@ class ChatPage extends StatelessWidget {
                     "Hello what can you do for me ",
                   );
                 },
-                icon: const Icon(Icons.security))
+                icon: const Icon(
+                  Icons.security,
+                  color: Colors.white,
+                ))
           ],
         ),
         body: SafeArea(
@@ -86,7 +90,7 @@ class ChatPage extends StatelessWidget {
                 )),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent.withOpacity(0.5),
+                    color: const Color.fromARGB(255, 19, 143, 110),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   height: 60,
@@ -97,7 +101,7 @@ class ChatPage extends StatelessWidget {
                         decoration: InputDecoration(
                             hintText: "You can ask what you want..",
                             hintStyle: GoogleFonts.poppins(
-                              color: Colors.black45,
+                              color: Colors.white,
                               fontWeight: FontWeight.w500,
                             ),
                             border: const OutlineInputBorder(

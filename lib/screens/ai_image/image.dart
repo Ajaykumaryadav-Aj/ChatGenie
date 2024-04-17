@@ -2,8 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chat_genie/global/cus_btn.dart';
 import 'package:chat_genie/global/cus_landing_page.dart';
 import 'package:chat_genie/controller/image_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 class ImageFeature extends StatefulWidget {
@@ -25,8 +27,26 @@ class _ImageFeatureState extends State<ImageFeature> {
 
         //app bar
         appBar: AppBar(
-          title: const Text('AI Image Creator'),
-
+          title: Text(
+            'AI Image Creator',
+            style: GoogleFonts.poppins(
+              fontSize: 21,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: const Color.fromARGB(255, 37, 97, 127),
+          leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              CupertinoIcons.back,
+              size: 25,
+              color: Colors.white,
+            ),
+          ),
           //share btn
           // actions: [
           //   Obx(
@@ -66,16 +86,17 @@ class _ImageFeatureState extends State<ImageFeature> {
               left: mq.width * .04,
               right: mq.width * .04),
           children: [
+            const SizedBox(height: 15),
             //text field
+
             TextFormField(
               controller: _c.textC,
               textAlign: TextAlign.center,
-              minLines: 2,
+              minLines: 1,
               maxLines: null,
               onTapOutside: (e) => FocusScope.of(context).unfocus(),
               decoration: const InputDecoration(
-                  hintText:
-                      'Imagine something wonderful & innovative\nType here & I will create for you 😃',
+                  hintText: 'Type here & I will create for you 😃',
                   hintStyle: TextStyle(fontSize: 13.5),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),

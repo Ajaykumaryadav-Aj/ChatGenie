@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:chat_genie/screens/ai_image/image.dart';
 import 'package:chat_genie/screens/chatbot/chat.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -21,10 +20,12 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 37, 97, 127),
           centerTitle: true,
-          title: const Text(
+          title: Text(
             'Chat Genie',
-            style: TextStyle(
+            style: GoogleFonts.poppins(
+              fontSize: 21,
               color: Colors.white,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),
