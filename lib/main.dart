@@ -1,5 +1,6 @@
-import 'package:chat_genie/HomePage.dart';
+import 'package:chat_genie/chatbot/HomePage.dart';
 import 'package:chat_genie/screens/image.dart';
+import 'package:chat_genie/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }
@@ -36,14 +37,18 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color.fromARGB(117, 68, 68, 68),
         appBar: AppBar(
-          backgroundColor: Colors.blueGrey.withOpacity(0.1),
+          backgroundColor: const Color.fromARGB(255, 37, 97, 127),
           centerTitle: true,
           title: const Text(
-            'AI Assistant',
+            'Chat Genie',
             style: TextStyle(
               color: Colors.white,
             ),
           ),
+        ),
+        drawer: const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Text('About'), Text('Description')],
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -60,7 +65,7 @@ class HomePage extends StatelessWidget {
                     height: 180,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 52, 97, 111),
+                      color: const Color.fromARGB(255, 19, 143, 110),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
@@ -91,7 +96,7 @@ class HomePage extends StatelessWidget {
                     height: 180,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 52, 97, 111),
+                      color: const Color.fromARGB(206, 2, 73, 95),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(

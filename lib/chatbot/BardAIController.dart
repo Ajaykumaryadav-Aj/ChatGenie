@@ -1,7 +1,8 @@
 import 'dart:convert';
+import 'dart:developer';
 
-import 'package:chat_genie/BardModel.dart';
-import 'package:chat_genie/data.dart';
+import 'package:chat_genie/chatbot/BardModel.dart';
+import 'package:chat_genie/chatbot/data.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
@@ -35,7 +36,7 @@ class BardAIController extends GetxController {
     final bardReplay = response["candidates"][0]["output"];
     var newHistory2 = BardModel(system: "bard", message: bardReplay);
     historyList.add(newHistory2);
-    print(bardReplay.toString());
+    log(bardReplay.toString());
     isLoading.value = false;
   }
 }

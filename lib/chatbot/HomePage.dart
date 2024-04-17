@@ -1,4 +1,4 @@
-import 'package:chat_genie/BardAIController.dart';
+import 'package:chat_genie/chatbot/BardAIController.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
