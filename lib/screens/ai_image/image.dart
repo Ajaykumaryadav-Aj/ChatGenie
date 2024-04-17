@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:chat_genie/screens/cus_btn.dart';
-import 'package:chat_genie/screens/cus_landing_page.dart';
-import 'package:chat_genie/screens/image_controller.dart';
+import 'package:chat_genie/global/cus_btn.dart';
+import 'package:chat_genie/global/cus_landing_page.dart';
+import 'package:chat_genie/controller/image_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';

@@ -1,9 +1,14 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'dart:convert';
 import 'dart:developer';
 
 import 'package:http/http.dart';
 
-const appName = 'Chat Genie';
+String APPNAME = 'Chat Genie';
+String APIKEY = "AIzaSyAqtgYQGVHDAfQWILDH7TP6O5au79kCCwU";
+String BaseURL =
+    "https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=YOUR_API_KEY";
 
 class APIs {
   static Future<List<String>> searchAiImages(String prompt) async {

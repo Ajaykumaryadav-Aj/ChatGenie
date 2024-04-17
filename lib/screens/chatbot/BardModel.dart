@@ -1,4 +1,3 @@
-
 class BardModel {
   String? system;
   String? message;
@@ -6,18 +5,18 @@ class BardModel {
   BardModel({this.system, this.message});
 
   BardModel.fromJson(Map<String, dynamic> json) {
-    if(json["system"] is String) {
+    if (json["system"] is String) {
       system = json["system"];
     }
-    if(json["message"] is String) {
+    if (json["message"] is String) {
       message = json["message"];
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["system"] = system;
-    _data["message"] = message;
-    return _data;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["system"] = system;
+    data["message"] = message;
+    return data;
   }
 }

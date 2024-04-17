@@ -1,7 +1,9 @@
-import 'package:chat_genie/chatbot/BardAIController.dart';
-
+import 'package:chat_genie/apis/apis.dart';
+import 'package:chat_genie/screens/chatbot/BardAIController.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -14,23 +16,38 @@ class ChatPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xfff2f1f9),
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              CupertinoIcons.back,
+              size: 25,
+            ),
+          ),
           centerTitle: true,
           // leading: SvgPicture.asset(
           //   "assets/bard_logo.svg",
           //   width: 10,
           // ),
-          title: const Text(
-            "Chat Genie",
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.orange),
+          title: Text(
+            APPNAME,
+            style: GoogleFonts.poppins(
+              fontSize: 21,
+              color: Colors.black,
+              fontWeight: FontWeight.w500,
+            ),
           ),
           backgroundColor: Colors.white,
-          // actions: [
-          //   IconButton(
-          //       onPressed: () {
-          //         controller.sendPrompt("Hello what can you do for me ");
-          //       },
-          //       icon: const Icon(Icons.security))
-          // ],
+          actions: [
+            IconButton(
+                onPressed: () {
+                  controller.sendPrompt(
+                    "Hello what can you do for me ",
+                  );
+                },
+                icon: const Icon(Icons.security))
+          ],
         ),
         body: SafeArea(
           child: Padding(
@@ -40,52 +57,6 @@ class ChatPage extends StatelessWidget {
                 Expanded(
                     child: ListView(
                   children: [
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.center,
-                    //   children: [
-                    //     Container(
-                    //       padding:
-                    //           const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                    //       decoration: BoxDecoration(
-                    //         color: Colors.white,
-                    //         borderRadius: BorderRadius.circular(10),
-                    //       ),
-                    //       child:
-                    //           const Text("Welcome to flutter hero ask some thing  ❤️ "),
-                    //     ),
-                    //   ],
-                    // ),
-                    const SizedBox(height: 15),
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.center,
-                    //   children: [
-                    //     Container(
-                    //       padding:
-                    //           const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                    //       decoration: BoxDecoration(
-                    //         color: Colors.white,
-                    //         borderRadius: BorderRadius.circular(10),
-                    //       ),
-                    //       child: const Text(
-                    //           "😍 How can i be a best software developer in just"),
-                    //     ),
-                    //   ],
-                    // ),
-                    const SizedBox(height: 15),
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.center,
-                    //   children: [
-                    //     Container(
-                    //       padding:
-                    //           const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                    //       decoration: BoxDecoration(
-                    //         color: Colors.white,
-                    //         borderRadius: BorderRadius.circular(10),
-                    //       ),
-                    //       // child: const Text("Flutter Getx Full video💡 "),
-                    //     ),
-                    //   ],
-                    // ),
                     Obx(() => Column(
                           children: controller.historyList
                               .map(
@@ -100,7 +71,9 @@ class ChatPage extends StatelessWidget {
                                   ),
                                   child: Row(
                                     children: [
-                                      Text(e.system == "user" ? "👨‍💻" : "🤖"),
+                                      Text(
+                                        e.system == "user" ? "👨‍💻" : "🤖",
+                                      ),
                                       const SizedBox(width: 10),
                                       Flexible(child: Text(e.message)),
                                     ],
@@ -121,9 +94,13 @@ class ChatPage extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         controller: textField,
-                        decoration: const InputDecoration(
-                            hintText: "You can ask what you want",
-                            border: OutlineInputBorder(
+                        decoration: InputDecoration(
+                            hintText: "You can ask what you want..",
+                            hintStyle: GoogleFonts.poppins(
+                              color: Colors.black45,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            border: const OutlineInputBorder(
                               borderSide: BorderSide.none,
                             )),
                       ),

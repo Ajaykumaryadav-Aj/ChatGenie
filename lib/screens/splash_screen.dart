@@ -1,9 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:chat_genie/main.dart';
-import 'package:chat_genie/screens/cus_landing_page.dart';
+import 'package:chat_genie/global/cus_landing_page.dart';
+import 'package:chat_genie/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -33,6 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     var mq = MediaQuery.sizeOf(context);
 
     return Scaffold(
+      backgroundColor: Colors.black,
       //body
       body: SizedBox(
         width: double.maxFinite,

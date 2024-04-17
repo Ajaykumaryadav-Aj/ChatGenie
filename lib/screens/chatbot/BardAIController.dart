@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:chat_genie/chatbot/BardModel.dart';
-import 'package:chat_genie/chatbot/data.dart';
+import 'package:chat_genie/apis/apis.dart';
+import 'package:chat_genie/screens/chatbot/BardModel.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 

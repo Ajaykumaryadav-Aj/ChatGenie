@@ -1,4 +1,4 @@
-import 'package:chat_genie/screens/cus_landing_page.dart';
+import 'package:chat_genie/global/cus_landing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
