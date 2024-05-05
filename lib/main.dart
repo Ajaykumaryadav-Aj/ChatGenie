@@ -1,9 +1,6 @@
-import 'package:chat_genie/screens/chatbot/chat.dart';
-import 'package:chat_genie/screens/ai_image/image.dart';
 import 'package:chat_genie/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 void main() {
   runApp(const MyApp());

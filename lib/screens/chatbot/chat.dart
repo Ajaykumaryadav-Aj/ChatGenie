@@ -98,6 +98,10 @@ class ChatPage extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         controller: textField,
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
                         decoration: InputDecoration(
                             hintText: "You can ask what you want..",
                             hintStyle: GoogleFonts.poppins(
@@ -111,7 +115,13 @@ class ChatPage extends StatelessWidget {
                     ),
                     Obx(
                       () => controller.isLoading.value
-                          ? const CircularProgressIndicator()
+                          ? const SizedBox(
+                              height: 30,
+                              width: 30,
+                              child: CircularProgressIndicator(
+                                color: Colors.white,
+                              ),
+                            )
                           : IconButton(
                               onPressed: () {
                                 if (textField.text != "") {

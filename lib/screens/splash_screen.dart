@@ -3,6 +3,7 @@ import 'package:chat_genie/global/cus_landing_page.dart';
 import 'package:chat_genie/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -55,18 +56,27 @@ class _SplashScreenState extends State<SplashScreen> {
             AnimatedTextKit(
               isRepeatingAnimation: true,
               animatedTexts: [
-                ColorizeAnimatedText('Welcome to ',
-                    colors: [
-                      Colors.white,
-                      Colors.transparent,
-                      Colors.greenAccent
-                    ],
-                    textStyle: const TextStyle(
-                      fontSize: 20,
-                    )),
-                ColorizeAnimatedText(' Chat Genie',
-                    colors: [Colors.greenAccent, Colors.blue],
-                    textStyle: const TextStyle(fontSize: 30)),
+                ColorizeAnimatedText(
+                  'Welcome to ',
+                  colors: [
+                    Colors.white,
+                    Colors.transparent,
+                    Colors.white,
+                    Colors.greenAccent
+                  ],
+                  textStyle: GoogleFonts.poppins(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                ColorizeAnimatedText(
+                  ' Chat Genie',
+                  colors: [Colors.greenAccent, Colors.blue],
+                  textStyle: GoogleFonts.poppins(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ],
               totalRepeatCount: 1,
               pause: const Duration(milliseconds: 200),

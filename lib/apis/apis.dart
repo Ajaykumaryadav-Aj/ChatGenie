@@ -8,7 +8,7 @@ import 'package:http/http.dart';
 String APPNAME = 'Chat Genie';
 String APIKEY = "AIzaSyAqtgYQGVHDAfQWILDH7TP6O5au79kCCwU";
 String BaseURL =
-    "https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=YOUR_API_KEY";
+    "https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=$APIKEY";
 
 class APIs {
   static Future<List<String>> searchAiImages(String prompt) async {
