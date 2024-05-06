@@ -1,7 +1,7 @@
-import 'dart:ui';
-
+import 'package:chat_genie/screens/about_page.dart';
 import 'package:chat_genie/screens/ai_image/image.dart';
 import 'package:chat_genie/screens/chatbot/chat.dart';
+import 'package:chat_genie/screens/description.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 37, 97, 127),
           centerTitle: true,
           title: Text(
-            'Chat Genie',
+            'ChatGenie',
             style: GoogleFonts.poppins(
               fontSize: 21,
               color: Colors.white,
@@ -36,17 +36,26 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 30,
-                  top: 20,
-                ),
-                child: Text(
-                  'About',
-                  style: GoogleFonts.poppins(
-                    fontSize: 15,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AboutPage(),
+                      ));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 30,
+                    top: 20,
+                  ),
+                  child: Text(
+                    'About',
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),
@@ -55,17 +64,26 @@ class HomePage extends StatelessWidget {
                 color: Colors.white,
                 thickness: 0.2,
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 30,
-                  top: 20,
-                ),
-                child: Text(
-                  'Description',
-                  style: GoogleFonts.poppins(
-                    fontSize: 15,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DescriptionPage(),
+                      ));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 30,
+                    top: 20,
+                  ),
+                  child: Text(
+                    'Description',
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               )
@@ -117,7 +135,12 @@ class HomePage extends StatelessWidget {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    Get.to(const ImageFeature());
+                    // Get.to(const ImageFeature());
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageFeature(),
+                        ));
                   },
                   child: Container(
                     height: 180,

@@ -91,6 +91,7 @@ class _ImageFeatureState extends State<ImageFeature> {
             //text field
 
             TextFormField(
+              style: const TextStyle(color: Colors.white),
               controller: _c.textC,
               textAlign: TextAlign.center,
               minLines: 1,

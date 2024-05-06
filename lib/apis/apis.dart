@@ -14,8 +14,8 @@ class APIs {
   static Future<List<String>> searchAiImages(String prompt) async {
     try {
       final res =
-          await get(Uri.parse('https://lexica.art/api/v1/search?q=$prompt'));
-      // await get(Uri.parse('https://lexica.art/api/v1/search?q=apples'));
+          // await get(Uri.parse('https://lexica.art/api/v1/search?q=$prompt'));
+          await get(Uri.parse( 'https://ai-image-generator-from-a-prompt-using-openai-api.p.rapidapi.com/image?q=$prompt'));
 
       final data = jsonDecode(res.body);
 
