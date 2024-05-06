@@ -1,5 +1,5 @@
 import 'dart:io';
-
+ 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:chat_genie/global/cus_landing_page.dart';
 import 'package:chat_genie/screens/home.dart';
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     //wait for some time on splash & then move to next screen
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 3), () {
       // Navigator.of(context).pushReplacement(MaterialPageRoute(
       //     builder: (_) => Pref.showOnboarding
       //         ? const OnboardingScreen()

@@ -51,9 +51,9 @@ dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/chatgenie-high-resolution-logo-transparent (1).png"
+  image_path: "assets/images/app logo chat genie.png"
   adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: "assets/images/chatgenie-high-resolution-logo-transparent (1).png"
+  adaptive_icon_foreground: "assets/images/app logo chat genie.png"
     
 
 dev_dependencies:
