@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:chat_genie/global/cus_landing_page.dart';
 import 'package:chat_genie/screens/home.dart';
@@ -42,6 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const Spacer(flex: 1),
 
             //logo
+
             Card(
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -56,16 +59,12 @@ class _SplashScreenState extends State<SplashScreen> {
               isRepeatingAnimation: true,
               animatedTexts: [
                 ColorizeAnimatedText('Welcome to ',
-                    colors: [
-                      Colors.white,
-                      Colors.transparent,
-                      Colors.greenAccent
-                    ],
+                    colors: [Colors.white, Colors.white],
                     textStyle: const TextStyle(
                       fontSize: 20,
                     )),
                 ColorizeAnimatedText(' Chat Genie',
-                    colors: [Colors.greenAccent, Colors.blue],
+                    colors: [Colors.white, Colors.white],
                     textStyle: const TextStyle(fontSize: 30)),
               ],
               totalRepeatCount: 1,

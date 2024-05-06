@@ -23,7 +23,8 @@ class _ImageFeatureState extends State<ImageFeature> {
     var mq = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xfff2f1f9),
+        // backgroundColor: const Color(0xfff2f1f9),
+        backgroundColor: const Color.fromARGB(117, 68, 68, 68),
 
         //app bar
         appBar: AppBar(
@@ -96,10 +97,15 @@ class _ImageFeatureState extends State<ImageFeature> {
               maxLines: null,
               onTapOutside: (e) => FocusScope.of(context).unfocus(),
               decoration: const InputDecoration(
-                  hintText: 'Type here & I will create for you 😃',
-                  hintStyle: TextStyle(fontSize: 13.5),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)))),
+                hintText: 'Type here & I will create for you 😃',
+                hintStyle: TextStyle(fontSize: 13.5, color: Colors.white),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white, width: 2),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
+              ),
             ),
 
             // ai image

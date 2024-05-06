@@ -130,6 +130,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        // const SizedBox(width: 5),
                         Text(
                           'AI  Image Creator',
                           textAlign: TextAlign.center,

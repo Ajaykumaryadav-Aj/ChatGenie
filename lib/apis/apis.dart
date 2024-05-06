@@ -15,6 +15,7 @@ class APIs {
     try {
       final res =
           await get(Uri.parse('https://lexica.art/api/v1/search?q=$prompt'));
+      // await get(Uri.parse('https://lexica.art/api/v1/search?q=apples'));
 
       final data = jsonDecode(res.body);
 

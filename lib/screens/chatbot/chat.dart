@@ -14,7 +14,9 @@ class ChatPage extends StatelessWidget {
     TextEditingController textField = TextEditingController();
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xfff2f1f9),
+        // backgroundColor: const Color(0xfff2f1f9),
+        backgroundColor: const Color.fromARGB(117, 68, 68, 68),
+
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
