@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => AboutPage(),
+                        builder: (context) => const AboutPage(),
                       ));
                 },
                 child: Padding(
@@ -139,7 +139,7 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ImageFeature(),
+                          builder: (context) => const ImageFeature(),
                         ));
                   },
                   child: Container(

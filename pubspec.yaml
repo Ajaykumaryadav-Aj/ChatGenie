@@ -54,6 +54,7 @@ flutter_icons:
   image_path: "assets/images/app logo chat genie.png"
   adaptive_icon_background: "#ffffff"
   adaptive_icon_foreground: "assets/images/app logo chat genie.png"
+  archive: ^3.5.0 
     
 
 dev_dependencies:

@@ -13,30 +13,60 @@ class BardAIController extends GetxController {
   ]);
 
   RxBool isLoading = false.obs;
+
   void sendPrompt(String prompt) async {
     isLoading.value = true;
-    var newHistory = BardModel(system: "user", message: prompt);
-    historyList.add(newHistory);
-    final body = {
-      'prompt': {
-        'text': prompt,
-      },
-    };
 
-    final request = await http.post(
-      Uri.parse(
-          'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=$APIKEY'),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: jsonEncode(body),
+    // Add user message to chat history
+    historyList.add(BardModel(system: "user", message: prompt));
+
+    // Gemini API endpoint
+    final uri = Uri.parse(
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$APIKEY',
     );
 
-    final response = jsonDecode(request.body);
-    final bardReplay = response["candidates"][0]["output"];
-    var newHistory2 = BardModel(system: "bard", message: bardReplay);
-    historyList.add(newHistory2);
-    log(bardReplay.toString());
-    isLoading.value = false;
+    // Request body as expected by Gemini
+    final body = {
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {"text": prompt}
+          ]
+        }
+      ]
+    };
+
+    try {
+      final response = await http.post(
+        uri,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode(body),
+      );
+
+      final data = jsonDecode(response.body);
+      log('Gemini API Response: ${jsonEncode(data)}');
+
+      // Safely extract Gemini's reply
+      final text = data["candidates"]?[0]?["content"]?["parts"]?[0]?["text"];
+
+      if (text != null && text.isNotEmpty) {
+        historyList.add(BardModel(system: "bard", message: text));
+      } else {
+        historyList.add(BardModel(
+            system: "bard", message: "No response received from Gemini."));
+        log("Gemini response was empty or malformed.");
+      }
+    } catch (e, st) {
+      log('Gemini API error: $e\n$st');
+      historyList.add(BardModel(
+        system: "bard",
+        message: "Error communicating with Gemini API.",
+      ));
+    } finally {
+      isLoading.value = false;
+    }
   }
 }
